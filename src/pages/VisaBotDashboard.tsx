@@ -45,7 +45,6 @@ export const VisaBotDashboard = () => {
     booking: false,
   });
   const [attempts, setAttempts] = useState(0);
-
   const [currentProxy, setCurrentProxy] = useState('');
 
   const addLog = (message: string, type: LogEntry['type']) => {
