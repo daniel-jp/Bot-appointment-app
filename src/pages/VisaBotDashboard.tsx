@@ -45,7 +45,7 @@ export const VisaBotDashboard = () => {
     booking: false,
   });
   const [attempts, setAttempts] = useState(0);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   const [currentProxy, setCurrentProxy] = useState('');
 
   const addLog = (message: string, type: LogEntry['type']) => {
@@ -68,6 +68,9 @@ export const VisaBotDashboard = () => {
 
   // Simulate connection process
   const simulateConnection = async () => {
+    if (currentProxy) {
+      addLog(`Using proxy: ${currentProxy} to connect...`, 'info');
+    }
     setConnectionStatus({
       connection: true,
       login: false,
